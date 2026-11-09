@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="sw"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Sellers · ZUNE Admin</title><link rel="stylesheet" href="../css/admin.css"></head><body>
+<main id="content"><div class="ph"><h2>Sellers</h2><p class="mu">Seller stores and their status</p></div><div id="t"></div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="../js/config.js"></script><script src="../js/layout.js"></script>
+<script>
+(async()=>{const rows=await ZUNE.load('/admin/sellers',[{zune:'ZUNE-2001',store:'Neema Fashion',city:'Dar es Salaam',verify:'verified',status:'active'},{zune:'ZUNE-2002',store:'Salim Mart',city:'Arusha',verify:'pending',status:'active'}]);
+ZUNE.table(document.getElementById('t'),[['zune','ZUNE ID'],['store','Store'],['city','City'],['verify','Verification',r=>ZUNE.pill(r.verify)],['status','Status',r=>ZUNE.pill(r.status)]],rows)})();
+</script></body></html>

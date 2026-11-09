@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="sw"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Users & Profiles · ZUNE Admin</title><link rel="stylesheet" href="../css/admin.css"></head><body>
+<main id="content"><div class="ph"><h2>Users & Profiles</h2><p class="mu">Manage users, sellers and admins</p></div><div id="t"></div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="../js/config.js"></script><script src="../js/layout.js"></script>
+<script>
+(async()=>{const rows=await ZUNE.load(s=>s.from('profiles').select('id,full_name,email,role,status,created_at').order('created_at',{ascending:false}).limit(200),[]);
+ZUNE.table(document.getElementById('t'),[['full_name','User'],['email','Email'],['role','Role'],['status','Status',r=>ZUNE.pill(r.status)],['created_at','Joined',r=>(r.created_at||'').slice(0,10)]],rows)})();
+</script></body></html>

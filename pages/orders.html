@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="sw"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Orders · ZUNE Admin</title><link rel="stylesheet" href="../css/admin.css"></head><body>
+<main id="content"><div class="ph"><h2>Orders</h2><p class="mu">Track and manage orders</p></div><div id="t"></div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="../js/config.js"></script><script src="../js/layout.js"></script>
+<script>
+(async()=>{const rows=await ZUNE.load('/admin/orders',[{id:'ORD-5001',buyer:'Baraka Msuya',store:'Neema Fashion',amt:'45,000 TZS',status:'pending'},{id:'ORD-5002',buyer:'Amina Juma',store:'Salim Mart',amt:'60,000 TZS',status:'delivered'}]);
+ZUNE.table(document.getElementById('t'),[['id','Order'],['buyer','Buyer'],['store','Store'],['amt','Amount'],['status','Status',r=>ZUNE.pill(r.status)]],rows)})();
+</script></body></html>

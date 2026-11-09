@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="sw"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Seller Verification · ZUNE Admin</title><link rel="stylesheet" href="../css/admin.css"></head><body>
+<main id="content"><div class="ph"><h2>Seller Verification</h2><p class="mu">Review documents and approve sellers</p></div><div id="t"></div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="../js/config.js"></script><script src="../js/layout.js"></script>
+<script>
+(async()=>{const rows=await ZUNE.load('/admin/verification',[{store:'Salim Mart',applied:'2026-09-30',docs:'NIDA, Leseni, TIN',status:'pending'}]);
+ZUNE.table(document.getElementById('t'),[['store','Seller'],['applied','Applied'],['docs','Documents'],['status','Status',r=>ZUNE.pill(r.status)]],rows)})();
+</script></body></html>

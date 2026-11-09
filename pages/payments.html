@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="sw"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Payments · ZUNE Admin</title><link rel="stylesheet" href="../css/admin.css"></head><body>
+<main id="content"><div class="ph"><h2>Payments</h2><p class="mu">Payments, reference and status</p></div><div id="t"></div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="../js/config.js"></script><script src="../js/layout.js"></script>
+<script>
+(async()=>{const rows=await ZUNE.load('/admin/payments',[{ref:'TX-90001',user:'Amina Juma',type:'credit',amt:'150,000 TZS',status:'completed'},{ref:'TX-90004',user:'Salim Mart',type:'payout',amt:'80,000 TZS',status:'pending'}]);
+ZUNE.table(document.getElementById('t'),[['ref','Reference'],['user','User'],['type','Type'],['amt','Amount'],['status','Status',r=>ZUNE.pill(r.status)]],rows)})();
+</script></body></html>

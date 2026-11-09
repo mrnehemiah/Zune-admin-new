@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="sw"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Products · ZUNE Admin</title><link rel="stylesheet" href="../css/admin.css"></head><body>
+<main id="content"><div class="ph"><h2>Products</h2><p class="mu">Approve and manage the product catalog</p></div><div id="t"></div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="../js/config.js"></script><script src="../js/layout.js"></script>
+<script>
+(async()=>{const rows=await ZUNE.load('/admin/products',[{name:'Gauni la kitenge',store:'Neema Fashion',price:'35,000 TZS',status:'pending'},{name:'Viatu vya ngozi',store:'Salim Mart',price:'60,000 TZS',status:'approved'}]);
+ZUNE.table(document.getElementById('t'),[['name','Product'],['store','Seller'],['price','Price'],['status','Status',r=>ZUNE.pill(r.status)]],rows)})();
+</script></body></html>
